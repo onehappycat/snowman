@@ -1,0 +1,50 @@
+// MARK: - Search
+
+"_location_" = "Location:";
+"_add_location_" = "Add Location:"; // ?
+"_search_by_city_name_or_zip_code_" = "Search by City Name or ZIP Code";
+"_search_" = "Search";
+"_searching_" = "Searching...";
+"_no_results_for_ %@" = "No results for \"%@\".";
+"_results_for_ %@" = "Results for \"%@\":";
+
+// MARK: - Locations List
+
+"_now_" = "now";
+"_remove_" = "Remove";
+"_empty_locations_list" = "Open Settings (⚙) to add locations.";
+
+// MARK: - Preferences
+
+// MARK: Picker Labels
+"_units_" = "Units:";
+"_status_bar_" = "Status Bar:";
+"_theme_" = "Theme:";
+"_color_tint_" = "Color Tint:";
+
+// MARK: Picker Options
+"_units_si_" = "°C";
+"_units_us_" = "°F";
+"_background_color_tint_on_" = "On";
+"_background_color_tint_off_" = "Off";
+"_theme_default_theme_" = "Default";
+"_theme_monochrome_" = "Monochrome";
+"_status_bar_appearance_app_icon_" = "App Icon";
+"_status_bar_appearance_forecast_first_" = "Forecast (First)";
+"_status_bar_appearance_forecast_full_" = "Forecast (All)";
+
+// MARK: Buttons
+"_ok_" = "OK";
+"_close_" = "Close";
+"_about_" = "About";
+"_quit_" = "Quit";
+
+// MARK: - About
+"_version_ %@" = "Version: %@";
+"_last_update_ %@" = "Last Update: %@.";
+"_never_" = "Never";
+
+// MARK: - Errors
+"_error_" = "There was a problem retrieving data.";
+"_error_with_code_ %@" = "There was a problem retrieving data. (%@)";
+"_error_with_code_status_bar_ %@" = "Error: %@";
