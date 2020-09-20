@@ -26,7 +26,7 @@ struct DailyDataView: View {
             Text(day.temperatureLow)
                 .opacity(0.7)
                 .frame(width: 40, alignment: .trailing)
-        }
+        }.frame(height: 20)
     }
     
 }
