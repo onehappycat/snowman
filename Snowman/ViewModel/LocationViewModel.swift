@@ -61,17 +61,16 @@ final class LocationViewModel: ObservableObject, Identifiable {
     var currentIcon: WeatherStatus? {
         location.forecast?.currently.icon
     }
-
-    var isRaining: Bool {
-        [.rain, .thunderstorm, .sleet].contains(currentIcon?.description)
+    
+    func isCurrently(_ description: [WeatherStatus.Description?]) -> Bool {
+        description.contains(currentIcon?.description)
     }
-
-    var isAboutToRain: Bool {
+    
+    func isAboutToBe(_ description: [WeatherStatus.Description]) -> Bool {
         let forecast = hourlyForecast.prefix(2).map { $0.icon.description }
-        let precipiation: Set<WeatherStatus.Description> = [.rain, .thunderstorm, .sleet]
-        return !precipiation.isDisjoint(with: forecast)
+        return !Set(description).isDisjoint(with: forecast)
     }
-
+    
     var forecastSummary: String {
         guard hasForecast else {
             return String(format: NSLocalizedString("_error_with_code_status_bar_ %@", comment: ""), errorCode)
@@ -81,7 +80,20 @@ final class LocationViewModel: ObservableObject, Identifiable {
             "\(name):",
             "\(currentForecast.temperature)",
         ]
-        if isRaining || isAboutToRain { items.append("☂") }
+        
+        let raining: [WeatherStatus.Description] = [.rain, .thunderstorm, .sleet]
+        let snowing: [WeatherStatus.Description] = [.snow]
+        
+        // Current Weather Takes Precedence Over Upcoming Forecast
+        if isCurrently(raining) {
+            items.append(rainLabel)
+        } else if isCurrently(snowing) {
+            items.append(snowLabel)
+        } else if isAboutToBe(raining) {
+            items.append(rainLabel)
+        } else if isAboutToBe(snowing) {
+            items.append(snowLabel)
+        }
 
         return items.joined(separator: " ")
     }
@@ -129,6 +141,16 @@ final class LocationViewModel: ObservableObject, Identifiable {
             self.location.forecast = forecast
             NotificationCenter.default.post(name: .locationsDataUpdated, object: nil)
         }
+    }
+    
+    // MARK: - Private
+    
+    private var rainLabel: String {
+        "☂"
+    }
+    
+    private var snowLabel: String {
+        "❄︎"
     }
     
 }

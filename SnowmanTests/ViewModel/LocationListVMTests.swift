@@ -225,5 +225,55 @@ final class LocationListVMTests: XCTestCase {
 
         XCTAssertEqual(subject.statusBarTitle, "\(location.name): \(location.currentForecast.temperature) ☂")
     }
+    
+    func testTitleHasRainIndicatorIfItIsSnowing() {
+        let forecast = WeatherForecast(currently: .stub(icon: .init(description: .snow, daytime: true)),
+                                       hourly: [],
+                                       daily: [])
+        let location = LocationViewModel(model: Location(geoData: .stub(), forecast: forecast))
+        subject.add(location: location)
+        subject.preferences.statusBarAppearance = .forecastFirst
+
+        XCTAssertEqual(subject.statusBarTitle, "\(location.name): \(location.currentForecast.temperature) ❄︎")
+    }
+
+    func testTitleHasRainIndicatorIfItIsAboutToSnow() {
+        let cloudy = WeatherForecast.HourlyData.stub(icon: .init(description: .cloudy, daytime: true))
+        let rain = WeatherForecast.HourlyData.stub(icon: .init(description: .snow, daytime: true))
+
+        let forecast = WeatherForecast(currently: cloudy, hourly: [cloudy, rain], daily: [])
+
+        let location = LocationViewModel(model: Location(geoData: .stub(), forecast: forecast))
+        subject.add(location: location)
+        subject.preferences.statusBarAppearance = .forecastFirst
+
+        XCTAssertEqual(subject.statusBarTitle, "\(location.name): \(location.currentForecast.temperature) ❄︎")
+    }
+    
+    func testRainIndicatorTakesPrecedenceOverSnowIfRainIsCurrent() {
+        let rain = WeatherForecast.HourlyData.stub(icon: .init(description: .rain, daytime: true))
+        let snow = WeatherForecast.HourlyData.stub(icon: .init(description: .snow, daytime: true))
+
+        let forecast = WeatherForecast(currently: rain, hourly: [snow, rain], daily: [])
+
+        let location = LocationViewModel(model: Location(geoData: .stub(), forecast: forecast))
+        subject.add(location: location)
+        subject.preferences.statusBarAppearance = .forecastFirst
+
+        XCTAssertEqual(subject.statusBarTitle, "\(location.name): \(location.currentForecast.temperature) ☂")
+    }
+    
+    func testSnowIndicatorTakesPrecedenceOverRainIfSnowIsCurrent() {
+        let snow = WeatherForecast.HourlyData.stub(icon: .init(description: .snow, daytime: true))
+        let rain = WeatherForecast.HourlyData.stub(icon: .init(description: .rain, daytime: true))
+
+        let forecast = WeatherForecast(currently: snow, hourly: [rain, snow], daily: [])
+
+        let location = LocationViewModel(model: Location(geoData: .stub(), forecast: forecast))
+        subject.add(location: location)
+        subject.preferences.statusBarAppearance = .forecastFirst
+
+        XCTAssertEqual(subject.statusBarTitle, "\(location.name): \(location.currentForecast.temperature) ❄︎")
+    }
 
 }
