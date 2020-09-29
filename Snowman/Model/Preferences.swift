@@ -46,9 +46,9 @@ extension Preferences {
     }
 
     enum DataSource: String, Codable {
-        case darkSky
-        case openWeather
-        case snowman
+        case DarkSky
+        case OpenWeather
+        case Snowman
     }
 
 }

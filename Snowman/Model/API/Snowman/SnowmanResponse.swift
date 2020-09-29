@@ -6,5 +6,6 @@ struct SnowmanResponse: Codable {
     let longitude: Double
 
     let forecast: WeatherForecast
+    let dataSourceName: Preferences.DataSource
 
 }

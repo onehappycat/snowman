@@ -26,6 +26,13 @@ extension SettingsView {
                 Text("_last_update_ \(locations.lastUpdate)")
                     .font(.footnote)
                     .padding(.vertical)
+                
+                // Data Source
+                if let dataSource = locations.dataSource {
+                    Text("_data_source_ \(dataSource)")
+                        .font(.footnote)
+                        .padding(.bottom)
+                }
 
                 // Dissmiss Button
                 Button(action: {

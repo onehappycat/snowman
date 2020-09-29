@@ -3,7 +3,9 @@ import Foundation
 final class DarkSkyAPI: APIServiceProtocol {
 
     // MARK: - Properties
-
+    
+    var dataSourceName: String?
+    
     private let apiKey: String
     private let decoder: JSONDecoder
     private let geocoder: GeocoderServiceProtocol
@@ -15,6 +17,7 @@ final class DarkSkyAPI: APIServiceProtocol {
         self.apiKey = key
         self.networking = networking
         self.geocoder = geocoder
+        self.dataSourceName = "DarkSky"
 
         self.decoder = JSONDecoder()
         self.decoder.dateDecodingStrategy = .secondsSince1970
@@ -112,11 +115,7 @@ final class DarkSkyAPI: APIServiceProtocol {
                 let temperatureLow = day.temperatureLow,
                 let icon = day.icon,
                 let precipProbability = day.precipProbability,
-                let sunrise = day.sunriseTime,
-                let sunset = day.sunsetTime,
-                let status = weatherStatus(for: icon, isDaytime: isDaytime(day.time,
-                                                                           sunrise: sunrise,
-                                                                           sunset: sunset)) else {
+                let status = weatherStatus(for: icon, isDaytime: true) else {
                     return .failure(.apiDataParsing)
             }
 

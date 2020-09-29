@@ -118,6 +118,10 @@ final class LocationsListViewModel: ObservableObject {
     var lastUpdate: String {
         locationsForecastsLastUpdated?.dateHoursAndMinutes() ?? NSLocalizedString("_never_", comment: "")
     }
+    
+    var dataSource: String? {
+        api.dataSourceName
+    }
 
     // MARK: Title
 

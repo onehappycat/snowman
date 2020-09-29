@@ -2,7 +2,9 @@ import Foundation
 
 final class SnowmanAPI: APIServiceProtocol {
 
-    // MARK: - Private Properties
+    // MARK: - Properties
+    
+    var dataSourceName: String?
 
     private let baseURL: String
     private let decoder: JSONDecoder
@@ -60,6 +62,7 @@ final class SnowmanAPI: APIServiceProtocol {
             return .failure(.apiDataDecoding)
         }
 
+        dataSourceName = response.dataSourceName.rawValue
         return .success(response.forecast)
     }
 

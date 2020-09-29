@@ -2,7 +2,9 @@ import Foundation
 
 final class OpenWeatherAPI: APIServiceProtocol {
 
-    // MARK: - Private Properties
+    // MARK: - Properties
+    
+    var dataSourceName: String?
 
     private let apiKey: String
     private let baseURL = "https://api.openweathermap.org/data/2.5"
@@ -16,6 +18,7 @@ final class OpenWeatherAPI: APIServiceProtocol {
         self.apiKey = key
         self.networking = networking
         self.geocoder = geocoder
+        self.dataSourceName = "OpenWeather"
 
         self.decoder = JSONDecoder()
         self.decoder.dateDecodingStrategy = .secondsSince1970
@@ -95,10 +98,8 @@ final class OpenWeatherAPI: APIServiceProtocol {
 
         // MARK: Daily
         for day in response.daily {
-            let daytime = isDaytime(day.dt, sunrise: day.sunrise, sunset: day.sunset)
-
             guard let weather = day.weather.first,
-                let icon = weatherStatus(for: weather.id, isDaytime: daytime) else {
+                let icon = weatherStatus(for: weather.id, isDaytime: true) else {
                 return .failure(.apiDataParsing)
             }
 

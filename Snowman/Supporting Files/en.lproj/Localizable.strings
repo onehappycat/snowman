@@ -43,6 +43,7 @@
 "_version_ %@" = "Version: %@";
 "_last_update_ %@" = "Last Update: %@.";
 "_never_" = "Never";
+"_data_source_ %@" = "Data provided by %@.";
 
 // MARK: - Errors
 "_error_" = "There was a problem retrieving data.";
