@@ -69,7 +69,6 @@ final class DarkSkyAPI: APIServiceProtocol {
             let status = weatherStatus(for: icon, isDaytime: isDaytime(currentlyData.time, sunrise: sunrise, sunset: sunset)),
             let timezone = TimeZone(identifier: response.timezone) else {
                 return .failure(.apiDataParsing)
-
         }
 
         currently = WeatherForecast.HourlyData(date: currentlyData.time,
@@ -111,8 +110,8 @@ final class DarkSkyAPI: APIServiceProtocol {
         }
 
         for day in dailyData {
-            guard let temperatureHigh = day.temperatureHigh,
-                let temperatureLow = day.temperatureLow,
+            guard let temperatureMax = day.temperatureMax,
+                let temperatureMin = day.temperatureMin,
                 let icon = day.icon,
                 let precipProbability = day.precipProbability,
                 let status = weatherStatus(for: icon, isDaytime: true) else {
@@ -122,8 +121,8 @@ final class DarkSkyAPI: APIServiceProtocol {
             daily.append(WeatherForecast.DailyData(date: day.time,
                                                    timezone: timezone,
                                                    units: units,
-                                                   temperatureHigh: temperatureHigh,
-                                                   temperatureLow: temperatureLow,
+                                                   temperatureHigh: temperatureMax,
+                                                   temperatureLow: temperatureMin,
                                                    icon: status,
                                                    precipProbability: precipProbability))
         }

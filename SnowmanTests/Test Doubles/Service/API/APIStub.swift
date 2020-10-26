@@ -5,6 +5,7 @@ final class APIStub: APIServiceProtocol {
 
     private let forecastResult: Result<WeatherForecast, SnowmanError>!
     private let searchResult: Result<[Location], SnowmanError>!
+    var dataSourceName: String? = "APIStub"
 
     // MARK: - Init
 
