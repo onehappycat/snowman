@@ -37,6 +37,7 @@ extension Preferences {
     enum Theme: String, Codable, PreferencesViewRepresentable {
         case defaultTheme
         case monochrome
+        case sfSymbols
     }
 
     enum StatusBarAppearance: String, Codable, PreferencesViewRepresentable {

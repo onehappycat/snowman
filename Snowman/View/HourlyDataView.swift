@@ -12,13 +12,34 @@ struct HourlyDataView: View {
             Text(hour.precipProbability)
                 .foregroundColor(.systemBlue)
 
-            Image(theme.icon(for: hour.icon))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 30)
+            WeatherIconView(icon: theme.icon(for: hour.icon), isUsingSFSymbols: theme.isUsingSFSymbols)
 
             Text(hour.temperature)
         }.frame(width: 60, height: 60, alignment: .center)
+    }
+    
+}
+
+extension HourlyDataView {
+    
+    struct WeatherIconView: View {
+        
+        var icon: String
+        var isUsingSFSymbols: Bool
+        
+        var body: some View {
+            if isUsingSFSymbols {
+                Image(systemName: icon)
+                    .renderingMode(.original)
+                    .font(Font.system(.largeTitle).bold())
+                    .frame(height: 30)
+            } else {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 30)
+            }
+        }
     }
     
 }

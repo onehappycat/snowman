@@ -10,10 +10,7 @@ struct DailyDataView: View {
             Text(day.name)
                 .frame(width: 130, alignment: .leading)
             
-            Image(theme.icon(for: day.icon))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 25, alignment: .leading)
+            WeatherIconView(icon: theme.icon(for: day.icon), isUsingSFSymbols: theme.isUsingSFSymbols)
             
             Text(day.precipProbability)
                 .foregroundColor(.systemBlue)
@@ -26,7 +23,33 @@ struct DailyDataView: View {
             Text(day.temperatureLow)
                 .opacity(0.7)
                 .frame(width: 40, alignment: .trailing)
-        }.frame(height: 20)
+        }.frame(width: 350, height: 20)
+    }
+    
+}
+
+extension DailyDataView {
+    
+    struct WeatherIconView: View {
+        
+        var icon: String
+        var isUsingSFSymbols: Bool
+        
+        var body: some View {
+            if isUsingSFSymbols {
+                Image(systemName: icon)
+                    .resizable()
+                    .renderingMode(.original)
+                    .font(Font.system(.largeTitle).bold())
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 20, alignment: .leading)
+            } else {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 25, alignment: .leading)
+            }
+        }
     }
     
 }

@@ -1,25 +1,29 @@
 import SwiftUI
 
-struct DefaultTheme: ThemeProtocol {
+struct SFSymbolsTheme: ThemeProtocol {
 
-    var isUsingSFSymbols = false
+    var isUsingSFSymbols = true
     
     func iconAsset(for status: WeatherStatus) -> String {
         switch status.description {
         case .clearSky:
-            return status.daytime ? "default-sun" : "default-moon"
-        case .cloudy, .partlyCloudy, .fog:
-            return "default-cloud"
+            return status.daytime ? "sun.max.fill" : "moon.fill"
+        case .partlyCloudy:
+            return status.daytime ? "cloud.sun.fill" : "cloud.moon.fill"
+        case .cloudy:
+            return "cloud.fill"
+        case .fog:
+            return "cloud.fog.fill"
         case .rain:
-            return "default-cloud-rain"
+            return "cloud.rain.fill"
         case .thunderstorm:
-            return "default-cloud-storm"
+            return "cloud.bolt.fill"
         case .snow:
-            return "default-snowflake"
+            return "snow"
         case .sleet:
-            return "default-cloud-snow"
+            return "cloud.sleet"
         case .wind:
-            return "default-wind"
+            return "wind"
         }
     }
 

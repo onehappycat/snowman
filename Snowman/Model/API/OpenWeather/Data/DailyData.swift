@@ -20,7 +20,7 @@ extension OpenWeatherResponse {
         let visibility: Int?
         let pop: Double
         let rain: Double?
-        let snow: [String: Double]?
+        let snow: Double?
         let weather: [WeatherData]
 
     }

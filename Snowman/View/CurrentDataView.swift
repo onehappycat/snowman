@@ -7,15 +7,34 @@ struct CurrentDataView: View {
     
     var body: some View {
         HStack {
-            Image(theme.icon(for: current.icon))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 40)
+            WeatherIconView(icon: theme.icon(for: current.icon), isUsingSFSymbols: theme.isUsingSFSymbols)
             
             Text(current.temperature)
-                .font(.largeTitle)
-                .fontWeight(.thin)
+                .font(.system(size: 32, weight: .thin))
         }
     }
 
+}
+
+extension CurrentDataView {
+    
+    struct WeatherIconView: View {
+        
+        var icon: String
+        var isUsingSFSymbols: Bool
+        
+        var body: some View {
+            if isUsingSFSymbols {
+                Image(systemName: icon)
+                    .renderingMode(.original)
+                    .font(Font.system(.largeTitle).bold())
+            } else {
+                Image(icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 40)
+            }
+        }
+    }
+    
 }

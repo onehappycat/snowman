@@ -34,11 +34,17 @@ final class ThemeViewModel: ObservableObject {
             self.theme = DefaultTheme()
         case .monochrome:
             self.theme = MonochromeTheme()
+        case .sfSymbols:
+            self.theme = SFSymbolsTheme()
         }
     }
 
     func update(tint: Preferences.BackgroundColorTint) {
         self.tintOn = tint == .on
+    }
+    
+    var isUsingSFSymbols: Bool {
+        theme.isUsingSFSymbols
     }
 
 }

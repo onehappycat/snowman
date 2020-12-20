@@ -29,6 +29,7 @@
 "_background_color_tint_off_" = "Off";
 "_theme_default_theme_" = "Default";
 "_theme_monochrome_" = "Monochrome";
+"_theme_sf_symbols_" = "SF Symbols";
 "_status_bar_appearance_app_icon_" = "App Icon";
 "_status_bar_appearance_forecast_first_" = "Forecast (First)";
 "_status_bar_appearance_forecast_full_" = "Forecast (All)";

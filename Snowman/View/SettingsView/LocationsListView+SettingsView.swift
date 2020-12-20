@@ -30,18 +30,18 @@ extension SettingsView {
                                     .cornerRadius(6)
                                     .onTapGesture { self.locationsList.remove(location) }
                             }
+                            .frame(height: 50)
                             .background(Color.clear)
                             .cornerRadius(6)
-                            .padding()
 
-                            Divider()
+                            Divider().padding(.vertical, 5)
                         }
                     }
                     .onMove { (indexSet, index) in
                         self.locationsList.move(from: indexSet, to: index)
                     }
                     // Negative padding is a workaround, .listRowInsets(EdgeInsets()) does not currently work on macOS.
-                    .padding(.vertical, -4).padding(.horizontal, -8)
+                    .padding(.vertical, -4)//.padding(.horizontal, -8)
                 }.cornerRadius(10)
             }
         }

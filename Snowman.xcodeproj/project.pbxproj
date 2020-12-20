@@ -31,6 +31,7 @@
 		902486C923D21FC9006A53EC /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902486C723D21FC9006A53EC /* APIServiceProtocol.swift */; };
 		902486CA23D21FC9006A53EC /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902486C823D21FC9006A53EC /* DarkSkyAPI.swift */; };
 		9028A2B224AD341000891D7E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028A2B124AD341000891D7E /* DefaultTheme.swift */; };
+		90295CAD2573EF3D00D8E7B3 /* SFSymbolsTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90295CAC2573EF3D00D8E7B3 /* SFSymbolsTheme.swift */; };
 		902AD66724D6340600ADEF42 /* AboutView+SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902AD66624D6340600ADEF42 /* AboutView+SettingsView.swift */; };
 		9031150024CFB33F00DFB87B /* APIDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF9EDE249D818D00CD0BC4 /* APIDummy.swift */; };
 		9031150124CFB34200DFB87B /* APIStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90504071249D6765003190B5 /* APIStub.swift */; };
@@ -129,6 +130,7 @@
 		902486C723D21FC9006A53EC /* APIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		902486C823D21FC9006A53EC /* DarkSkyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyAPI.swift; sourceTree = "<group>"; };
 		9028A2B124AD341000891D7E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		90295CAC2573EF3D00D8E7B3 /* SFSymbolsTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsTheme.swift; sourceTree = "<group>"; };
 		902AD66624D6340600ADEF42 /* AboutView+SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutView+SettingsView.swift"; sourceTree = "<group>"; };
 		90372E702465E57000A5B38D /* NetworkingServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceProtocol.swift; sourceTree = "<group>"; };
 		90383CB92450DA800033F181 /* NSTableView+Snowman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+Snowman.swift"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				9097677E24AD3660006E062F /* ThemeProtocol.swift */,
 				9028A2B124AD341000891D7E /* DefaultTheme.swift */,
 				9097678024AD3832006E062F /* MonochromeTheme.swift */,
+				90295CAC2573EF3D00D8E7B3 /* SFSymbolsTheme.swift */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				90372E712465E57000A5B38D /* NetworkingServiceProtocol.swift in Sources */,
 				90C19A7023FF33A2006259D4 /* HourlyDataView.swift in Sources */,
 				90CED05923DE51360021B370 /* DailyDataViewModel.swift in Sources */,
+				90295CAD2573EF3D00D8E7B3 /* SFSymbolsTheme.swift in Sources */,
 				90E736842474B44000FACE2F /* PersistenceService.swift in Sources */,
 				90E5FFBF24AE500A006D224A /* UnitsConverterService.swift in Sources */,
 				90D45F8A248970EC00FB104A /* PreferencesView+SettingsView.swift in Sources */,
@@ -929,8 +933,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = onehappycat.Snowman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -953,8 +957,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.0.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = onehappycat.Snowman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -974,7 +978,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = onehappycat.snowmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -995,7 +999,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = onehappycat.snowmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

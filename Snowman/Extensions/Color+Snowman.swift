@@ -59,7 +59,6 @@ extension Color {
 
     // MARK: Table Colors
     static let gridColor = Color(NSColor.gridColor)
-    static let headerColor = Color(NSColor.headerColor)
     static let alternatingContentBackgroundColors = NSColor.alternatingContentBackgroundColors.map { Color($0) }
 
     // MARK: Control Colors

@@ -32,8 +32,7 @@ extension SettingsView {
             // MARK: Results Popover View
             .popover(isPresented: $presentingPopover, arrowEdge: .bottom) {
                 ScrollView {
-                    // TODO in SwiftUI 2: LazyVStack
-                    VStack(spacing: 0) {
+                    LazyVStack(spacing: 0) {
 
                         if self.locationsList.isSearching {
                             Text("_searching_")
@@ -45,7 +44,7 @@ extension SettingsView {
                         } else {
                             VStack(spacing: 0) {
                                 Text("_results_for_ \(self.lastSearchQuery)")
-                                    .font(.subheadline)
+                                    .font(.title2)
                                     .padding(.top, 20)
                                     .padding(.bottom, 10)
 
@@ -55,7 +54,7 @@ extension SettingsView {
                                     HStack {
                                         Spacer()
                                         Text("\(location.fullName)")
-                                            .font(.callout)
+                                            .font(.title2)
                                             .foregroundColor(.accentColor)
                                             .padding()
                                         Spacer()
@@ -67,10 +66,10 @@ extension SettingsView {
                                 }
 
                                 Spacer()
-                            }.padding(.leading).padding(.trailing).padding(.bottom)
+                            }.padding(.horizontal).padding(.bottom)
                         }
 
-                    }.frame(width: 400, height: 300)
+                    }.frame(width: 400, height: 300, alignment: .top)
                 }
             }
         }

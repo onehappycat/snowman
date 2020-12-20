@@ -2,6 +2,8 @@ import SwiftUI
 
 struct MonochromeTheme: ThemeProtocol {
 
+    var isUsingSFSymbols = false
+    
     func iconAsset(for status: WeatherStatus) -> String {
         switch status.description {
         case .clearSky:
