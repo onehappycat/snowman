@@ -15,9 +15,9 @@ macOS status menu weather app written in SwiftUI.
 
 ### Requirements
 
-- macOS 10.15+
-- Swift 5.2+
-- Xcode 11+
+- macOS 11.0+
+- Swift 5.3+
+- Xcode 12.0+
 - API key for a weather API service
 
 ### Development Setup
