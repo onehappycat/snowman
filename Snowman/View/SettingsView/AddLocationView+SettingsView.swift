@@ -35,19 +35,15 @@ extension SettingsView {
                     LazyVStack(spacing: 0) {
 
                         if self.locationsList.isSearching {
-                            Text("_searching_")
+                            SearchHeading("_searching_")
                         } else if self.locationsList.searchFailed {
-                            Text("_error_")
+                            SearchHeading("_error_")
                         } else if self.locationsList.searchResults.isEmpty {
-                            Text("_no_results_for_ \(self.lastSearchQuery)")
-                                .font(.callout)
+                            SearchHeading("_no_results_for_ \(self.lastSearchQuery)")
                         } else {
                             VStack(spacing: 0) {
-                                Text("_results_for_ \(self.lastSearchQuery)")
-                                    .font(.title2)
-                                    .padding(.top, 20)
-                                    .padding(.bottom, 10)
-
+                                SearchHeading("_results_for_ \(self.lastSearchQuery)")
+                                
                                 Divider()
 
                                 ForEach(self.locationsList.searchResults) { location in
@@ -97,4 +93,24 @@ extension SettingsView {
 
     }
 
+}
+
+extension SettingsView.AddLocationView {
+    
+    struct SearchHeading: View {
+            
+        let text: LocalizedStringKey
+        
+        init(_ text: LocalizedStringKey) {
+            self.text = text
+        }
+        
+        var body: some View {
+            Text(text)
+                .font(.title2)
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+        }
+    }
+    
 }

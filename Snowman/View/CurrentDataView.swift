@@ -24,16 +24,17 @@ extension CurrentDataView {
         var isUsingSFSymbols: Bool
         
         var body: some View {
-            if isUsingSFSymbols {
-                Image(systemName: icon)
-                    .renderingMode(.original)
-                    .font(Font.system(.largeTitle).bold())
-            } else {
-                Image(icon)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 40)
-            }
+            Group {
+                if isUsingSFSymbols {
+                    Image(systemName: icon)
+                        .renderingMode(.original)
+                        .font(Font.system(.largeTitle).bold())
+                } else {
+                    Image(icon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }.frame(height: 40)
         }
     }
     

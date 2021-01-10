@@ -28,17 +28,17 @@ extension HourlyDataView {
         var isUsingSFSymbols: Bool
         
         var body: some View {
-            if isUsingSFSymbols {
-                Image(systemName: icon)
-                    .renderingMode(.original)
-                    .font(Font.system(.largeTitle).bold())
-                    .frame(height: 30)
-            } else {
-                Image(icon)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 30)
-            }
+            Group {
+                if isUsingSFSymbols {
+                    Image(systemName: icon)
+                        .renderingMode(.original)
+                        .font(Font.system(.largeTitle).bold())
+                } else {
+                    Image(icon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }.frame(width: 30, height: 30)
         }
     }
     

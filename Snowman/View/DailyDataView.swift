@@ -36,19 +36,19 @@ extension DailyDataView {
         var isUsingSFSymbols: Bool
         
         var body: some View {
-            if isUsingSFSymbols {
-                Image(systemName: icon)
-                    .resizable()
-                    .renderingMode(.original)
-                    .font(Font.system(.largeTitle).bold())
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 20, alignment: .leading)
-            } else {
-                Image(icon)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 25, alignment: .leading)
-            }
+            Group {
+                if isUsingSFSymbols {
+                    Image(systemName: icon)
+                        .resizable()
+                        .renderingMode(.original)
+                        .font(Font.system(.largeTitle).bold())
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    Image(icon)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }.frame(width: 30, height: 25, alignment: .leading)
         }
     }
     
