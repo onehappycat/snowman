@@ -117,7 +117,7 @@ final class LocationViewModel: ObservableObject, Identifiable {
     }
 
     func forecastBackground(for colorScheme: ColorScheme) -> Color {
-        Color.textBackgroundColor.opacity(colorScheme == .light ? 0.4 : 0.8)
+        Color.textBackgroundColor.opacity(colorScheme == .light ? 0.45 : 0.8)
     }
 
     // MARK: - Actions
