@@ -58,22 +58,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: Popover Actions
     
-    @objc private func togglePopover(_ sender: Any?) {
+    @objc private func togglePopover(_ sender: NSButton) {
         if popover.isShown {
-            closePopover(sender: sender)
+            closePopover(sender)
         } else {
-            showPopover(sender: sender)
+            showPopover(sender)
         }
     }
     
-    private func showPopover(sender: Any?) {
-        if let button = statusBarItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+    private func showPopover(_ button: NSButton) {
+        // A helper positioning view that makes it possible to hide the NSPopover's arrow
+        let positioningView = NSView(frame: button.bounds)
+        positioningView.identifier = positioningViewIdentifier()
+        button.addSubview(positioningView)
+        
+        popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.maxY)
+        button.bounds = button.bounds.offsetBy(dx: 0, dy: button.bounds.height)
+
+        if let popoverWindow = popover.contentViewController?.view.window {
+            popoverWindow.setFrame(popoverWindow.frame.offsetBy(dx: 0, dy: 10), display: false)
         }
     }
     
-    private func closePopover(sender: Any?) {
-        popover.performClose(sender)
+    private func closePopover(_ button: NSButton) {
+        let positiongView = statusBarItem.button?.subviews.first { $0.identifier == positioningViewIdentifier() }
+        positiongView?.removeFromSuperview()
+        
+        popover.performClose(button)
+    }
+    
+    private func positioningViewIdentifier() -> NSUserInterfaceItemIdentifier {
+        NSUserInterfaceItemIdentifier(rawValue: "snowman.positioningView")
     }
 
 }
