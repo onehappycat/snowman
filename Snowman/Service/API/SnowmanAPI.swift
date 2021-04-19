@@ -23,7 +23,7 @@ final class SnowmanAPI: APIServiceProtocol {
     }
 
     init(hostname: String, networking: NetworkingServiceProtocol, geocoder: GeocoderServiceProtocol = GeocoderService()) {
-        self.baseURL = "https://\(hostname.dropTrailingSlashIfPresent())/api/v1/weather"
+        self.baseURL = "https://\(hostname.dropTrailingSlashIfPresent())/api/v1/forecast"
         self.networking = networking
         self.geocoder = geocoder
 
