@@ -91,7 +91,7 @@ final class DarkSkyAPI: APIServiceProtocol {
                 let precipProbability = hour.precipProbability,
                 let sunrise = response.daily?.data.first?.sunriseTime,
                 let sunset = response.daily?.data.first?.sunsetTime,
-                let status = weatherStatus(for: icon, isDaytime: isDaytime(currentlyData.time, sunrise: sunrise, sunset: sunset)) else {
+                let status = weatherStatus(for: icon, isDaytime: isDaytime(hour.time, sunrise: sunrise, sunset: sunset)) else {
                     return .failure(.apiDataParsing)
             }
 
