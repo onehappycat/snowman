@@ -1,6 +1,6 @@
 # ⛄️ Snowman
 
-macOS status menu weather app written in SwiftUI.
+Snowman is a macOS status menu weather app written in SwiftUI.
 
 ## Table of Contents
 
@@ -18,13 +18,17 @@ macOS status menu weather app written in SwiftUI.
 - macOS 11.0+
 - Swift 5.3+
 - Xcode 12.0+
-- API key for a weather API service
+- An API key for a weather API service
 
 ### Development Setup
 
-Add your API key to API Service initialization in `AppDelegate`. Note that distributing the app with an API key is **insecure** and this approach is only acceptable for personal use or testing. For any distribution purposes, use custom backend or the [SnowmanBackend](https://github.com/onehappycat/snowman-backend).
+1. Add your API key to an API Service initialization in the `AppDelegate` or initialize your own service.
+
+> Note that distributing the app with an API key built-in is **insecure** and this approach is only acceptable for personal use or testing. For any distribution purposes, use a custom backend or the [SnowmanBackend](https://github.com/onehappycat/snowman_backend).
+
+All done and ready to build! No dependencies or further steps necessary.
 
 ### Implementing Support for an API Service
 
-- Conform to `APIServiceProtocol`.
-- Initialize the service in `AppDelegate` and inject it into `LocationsListViewModel`.
+1. Conform to `APIServiceProtocol`.
+2. Initialize the service in the `AppDelegate` and inject it into the `LocationsListViewModel`.
