@@ -13,7 +13,9 @@ final class SnowmanAPI: APIServiceProtocol {
 
     // MARK: - Init
 
-    init(url: String, networking: NetworkingServiceProtocol, geocoder: GeocoderServiceProtocol = GeocoderService()) {
+    init(url: String,
+         networking: NetworkingServiceProtocol = NetworkingService(),
+         geocoder: GeocoderServiceProtocol = GeocoderService()) {
         self.baseURL = url.dropTrailingSlashIfPresent()
         self.networking = networking
         self.geocoder = geocoder
@@ -22,7 +24,9 @@ final class SnowmanAPI: APIServiceProtocol {
         self.decoder.dateDecodingStrategy = .secondsSince1970
     }
 
-    init(hostname: String, networking: NetworkingServiceProtocol, geocoder: GeocoderServiceProtocol = GeocoderService()) {
+    init(hostname: String,
+         networking: NetworkingServiceProtocol = NetworkingService(),
+         geocoder: GeocoderServiceProtocol = GeocoderService()) {
         self.baseURL = "https://\(hostname.dropTrailingSlashIfPresent())/api/v1/forecast"
         self.networking = networking
         self.geocoder = geocoder

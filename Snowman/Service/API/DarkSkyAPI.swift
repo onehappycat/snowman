@@ -13,7 +13,9 @@ final class DarkSkyAPI: APIServiceProtocol {
 
     // MARK: - Init
 
-    init(key: String, networking: NetworkingServiceProtocol, geocoder: GeocoderServiceProtocol = GeocoderService()) {
+    init(key: String,
+         networking: NetworkingServiceProtocol = NetworkingService(),
+         geocoder: GeocoderServiceProtocol = GeocoderService()) {
         self.apiKey = key
         self.networking = networking
         self.geocoder = geocoder
