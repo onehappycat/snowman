@@ -3,8 +3,9 @@ import Foundation
 extension String {
 
     func camelToSnakeCase() -> String {
-        self.replacingOccurrences(of: "([a-z])([A-Z])", with: "$1_$2", options: .regularExpression)
-            .replacingOccurrences(of: "([a-z])([0-9]+)", with: "$1_$2", options: .regularExpression)
+        self.replacingOccurrences(of: "([a-z])([A-Z]|[0-9])", with: "$1_$2", options: .regularExpression)
+            .replacingOccurrences(of: "([0-9])([A-Z])", with: "$1_$2", options: .regularExpression)
+            .replacingOccurrences(of: "([A-Z]+)([A-Z][a-z]|[0-9])", with: "$1_$2", options: .regularExpression)
             .lowercased()
     }
 
