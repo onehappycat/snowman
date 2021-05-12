@@ -26,6 +26,7 @@
 		901D90F123F44D5600E46104 /* CurrentDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D90F023F44D5600E46104 /* CurrentDataView.swift */; };
 		902004F923F4444100D00F95 /* DailyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902004F823F4444100D00F95 /* DailyDataView.swift */; };
 		9021108C23E07C4F0052ACB7 /* Date+Snowman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021108B23E07C4F0052ACB7 /* Date+Snowman.swift */; };
+		90225E40264C1A9E004509F4 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90225E3F264C1A9E004509F4 /* AppConfiguration.swift */; };
 		902486C223D21FB8006A53EC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902486C123D21FB8006A53EC /* Location.swift */; };
 		902486C623D21FC3006A53EC /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902486C423D21FC3006A53EC /* LocationView.swift */; };
 		902486C923D21FC9006A53EC /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902486C723D21FC9006A53EC /* APIServiceProtocol.swift */; };
@@ -42,6 +43,7 @@
 		90383CBA2450DA800033F181 /* NSTableView+Snowman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90383CB92450DA800033F181 /* NSTableView+Snowman.swift */; };
 		904B511424DB74050080A4D7 /* NetworkingStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904B510F24DB6FBE0080A4D7 /* NetworkingStub.swift */; };
 		904B511524DB74240080A4D7 /* NetworkingDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053028424DB425F008E18A3 /* NetworkingDummy.swift */; };
+		90510BA826445C4A00488193 /* AppConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90510BA726445C4A00488193 /* AppConfiguration.plist */; };
 		905319772463871900DE2AC7 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905319762463871900DE2AC7 /* WeatherForecast.swift */; };
 		905E4B8523ECDA0A00F18655 /* WeatherDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E4B8423ECDA0A00F18655 /* WeatherDataPresenter.swift */; };
 		906F9FC72433BF7A0030ACE2 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906F9FC62433BF7A0030ACE2 /* OpenWeatherAPI.swift */; };
@@ -124,6 +126,7 @@
 		901D90F023F44D5600E46104 /* CurrentDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDataView.swift; sourceTree = "<group>"; };
 		902004F823F4444100D00F95 /* DailyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDataView.swift; sourceTree = "<group>"; };
 		9021108B23E07C4F0052ACB7 /* Date+Snowman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Snowman.swift"; sourceTree = "<group>"; };
+		90225E3F264C1A9E004509F4 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		902486C123D21FB8006A53EC /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		902486C323D21FC3006A53EC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		902486C423D21FC3006A53EC /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		904B510F24DB6FBE0080A4D7 /* NetworkingStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStub.swift; sourceTree = "<group>"; };
 		90504071249D6765003190B5 /* APIStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStub.swift; sourceTree = "<group>"; };
 		90504073249D67C5003190B5 /* WeatherForecast+SnowmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherForecast+SnowmanTests.swift"; sourceTree = "<group>"; };
+		90510BA726445C4A00488193 /* AppConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppConfiguration.plist; sourceTree = "<group>"; };
 		9053028424DB425F008E18A3 /* NetworkingDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDummy.swift; sourceTree = "<group>"; };
 		905319762463871900DE2AC7 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		905E4B8423ECDA0A00F18655 /* WeatherDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataPresenter.swift; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 				901B73C924DCC0290064B151 /* WeatherStatus.swift */,
 				9028A2B024AD340200891D7E /* Themes */,
 				90B7EAA824D33014008F068B /* API */,
+				90225E3F264C1A9E004509F4 /* AppConfiguration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 				9084FE9323C94D0E00F79187 /* Supporting Files */,
 				90D209BA23C3D2BC00A2C134 /* Assets.xcassets */,
 				90D209BF23C3D2BC00A2C134 /* Main.storyboard */,
+				90510BA726445C4A00488193 /* AppConfiguration.plist */,
 			);
 			path = Snowman;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90510BA826445C4A00488193 /* AppConfiguration.plist in Resources */,
 				90D209C123C3D2BC00A2C134 /* Main.storyboard in Resources */,
 				90B0649724699DC900B702D9 /* Localizable.strings in Resources */,
 				90D209BB23C3D2BC00A2C134 /* Assets.xcassets in Resources */,
@@ -730,6 +737,7 @@
 				90C3452523CF91C8001D5046 /* DataPoint.swift in Sources */,
 				9097677F24AD3660006E062F /* ThemeProtocol.swift in Sources */,
 				90CF1CAB23D8E1EF002D8934 /* LocationsListViewModel.swift in Sources */,
+				90225E40264C1A9E004509F4 /* AppConfiguration.swift in Sources */,
 				9011648224B53D8A0052C6FC /* HourlyData.swift in Sources */,
 				90B7EAAA24D3302C008F068B /* SnowmanResponse.swift in Sources */,
 				9011648A24B53FE30052C6FC /* MinutelyData.swift in Sources */,
