@@ -13,8 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Status Bar Item Initialization
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // AppConfiguration
+        let configuration = try! getAppConfiguration()
+        
         // API Service
-        let apiService = OpenWeatherAPI(key: "OW_API_KEY", networking: NetworkingService())
+        let apiService = OpenWeatherAPI(key: configuration.apiKey)
 
         // Persistance Service
         let persistanceService = PersistenceService()
@@ -89,6 +92,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func positioningViewIdentifier() -> NSUserInterfaceItemIdentifier {
         NSUserInterfaceItemIdentifier(rawValue: "snowman.positioningView")
+    }
+    
+    // MARK: AppConfiguration
+    
+    private func getAppConfiguration() throws -> AppConfiguration {
+        let url = Bundle.main.url(forResource: "AppConfiguration", withExtension: "plist")!
+        let data = try Data(contentsOf: url)
+
+        return try PropertyListDecoder().decode(AppConfiguration.self, from: data)
     }
 
 }
